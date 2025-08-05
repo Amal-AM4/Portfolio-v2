@@ -1,0 +1,295 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery | Amal A M</title>
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!-- Google Fonts (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Lightbox modal */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .lightbox-controls {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .lightbox-controls button {
+      background-color: var(--orange-yellow-crayola);
+      color: black;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    .lightbox-controls button:hover {
+      background-color: #f8c94c;
+    }
+
+    .back-button {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        background-color: var(--orange-yellow-crayola);
+        color: black;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+        background-color: #f3c543;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <article class="gallery active">
+
+      <header>
+        <h2 class="h2 article-title">Image Gallery</h2>
+        <button onclick="location.href='index.html'" class="back-button">Back to Home</button>
+      </header>
+
+      <section class="gallery-grid">
+
+        <!-- Add your images here -->
+
+        <div class="gallery-item">
+          <img src="./poster/ma-english-admision.png" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/final.png" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/nyx.png" alt="Image 4" loading="lazy" />
+        </div>
+
+
+        <div class="gallery-item">
+          <img src="./poster/left-mgcf.png" alt="Image 1" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="./poster/q1q2q3.jpg" alt="Image 2" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="./poster/1_91is1_cover.jpg" alt="Image 3" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img src="./poster/1is1-single-white.jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+
+        <div class="gallery-item">
+          <img src="./poster/1is1_fullset.jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (1).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (10).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+
+        <div class="gallery-item">
+          <img src="./poster/image (11).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (2).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (3).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (4).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/nex.png" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/RMR.png" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/tr.png" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (5).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/large-mouspad-xl.jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (6).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (7).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (8).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/image (9).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (1).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/PSD_EU.jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (1).png" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (2).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (3).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (5).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (6).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (7).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (8).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (9).jpg" alt="Image 4" loading="lazy" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="./poster/img (2).png" alt="Image 4" loading="lazy" />
+        </div>
+
+
+      </section>
+
+    </article>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+      <img src="" id="lightboxImage" alt="Large view" />
+      <div class="lightbox-controls">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+        <button onclick="closeLightbox()">Close</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const galleryImages = [...document.querySelectorAll(".gallery-item img")];
+
+    let currentIndex = 0;
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        currentIndex = index;
+        showImage();
+      });
+    });
+
+    function showImage() {
+      lightboxImage.src = galleryImages[currentIndex].src;
+      lightbox.classList.add("active");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+    }
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      showImage();
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      showImage();
+    });
+
+    // ESC key to close
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
+
+
+</body>
+</html>

@@ -1899,3 +1899,50 @@ textarea.form-input::-webkit-resizer { display: none; }
   padding-right: 8px;
   font-style: italic;
 }
+
+
+
+.gallery-grid {
+  column-count: 1;
+  column-gap: 1rem;
+  padding: 20px;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive columns like Pinterest */
+@media (min-width: 600px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery-grid {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-grid {
+    column-count: 4;
+  }
+}
