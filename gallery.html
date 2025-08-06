@@ -134,7 +134,7 @@
     <article class="gallery active">
       <header>
         <h2 class="h2 article-title">Image Gallery</h2>
-        <button onclick="location.href='index.html'" class="back-button">← Back to Home</button>
+        <button onclick="location.href='index.html'" class="back-button">Back to Home</button>
       </header>
 
       <section class="gallery-grid" id="galleryGrid"></section>
@@ -202,57 +202,69 @@
 
     const galleryGrid = document.getElementById("galleryGrid");
 
-    // Inject image DOM
-    imagePaths.forEach((src, index) => {
-      const wrapper = document.createElement("div");
-      wrapper.className = "gallery-item";
+  // Inject image DOM dynamically
+  imagePaths.forEach((src, index) => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "gallery-item";
 
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = `Image ${index + 1}`;
-      img.loading = "lazy";
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `Image ${index + 1}`;
+    img.loading = "lazy";
 
-      wrapper.appendChild(img);
-      galleryGrid.appendChild(wrapper);
-    });
+    wrapper.appendChild(img);
+    galleryGrid.appendChild(wrapper);
+  });
 
-    // Lightbox logic
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    let currentIndex = 0;
+  // Lightbox logic
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  let currentIndex = 0;
 
-    function showImage() {
-      lightboxImage.src = imagePaths[currentIndex];
-      lightbox.classList.add("active");
-    }
+  function showImage() {
+    lightboxImage.src = imagePaths[currentIndex];
+    lightbox.classList.add("active");
+  }
 
-    function closeLightbox() {
-      lightbox.classList.remove("active");
-    }
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+  }
 
-    document.getElementById("prevBtn").addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
-      showImage();
-    });
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
+    showImage();
+  });
 
-    document.getElementById("nextBtn").addEventListener("click", () => {
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % imagePaths.length;
+    showImage();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeLightbox();
+    } else if (e.key === "ArrowRight") {
       currentIndex = (currentIndex + 1) % imagePaths.length;
       showImage();
-    });
+    } else if (e.key === "ArrowLeft") {
+      currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
+      showImage();
+    }
+  });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLightbox();
-    });
+  galleryGrid.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      const clickedSrc = e.target.getAttribute("src").split("/").pop();
+      currentIndex = imagePaths.findIndex((src) =>
+        src.endsWith(clickedSrc)
+      );
+      if (currentIndex === -1) currentIndex = 0;
+      showImage();
+    }
+  });
 
-    galleryGrid.addEventListener("click", (e) => {
-      if (e.target.tagName === "IMG") {
-        currentIndex = imagePaths.findIndex((src) =>
-          e.target.src.includes(src.replace("./", ""))
-        );
-        if (currentIndex === -1) currentIndex = 0; // fallback
-        showImage();
-      }
-    });
+
+
   </script>
 </body>
 
